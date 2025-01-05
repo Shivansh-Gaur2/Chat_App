@@ -18,11 +18,9 @@ A real-time collaborative chat application that enables multiple users to intera
 - **Backend**: Node.js, Express.js, WebSocket
 - **Database**: MongoDB
 - **Authentication**: bcrypt, JWT
-- **AI Integration**: OpenAI APIs
+- **AI Integration**: Google Gemini
 - **Real-time Communication**: Socket.io
 - **Caching**: Redis
-- **Cloud Deployment**: AWS/GCP (if applicable)
-
 ---
 
 ## Installation
@@ -65,7 +63,7 @@ A real-time collaborative chat application that enables multiple users to intera
    npm start
    ```
 
-5. Open your browser and navigate to `http://localhost:3000`.
+5. Open your browser and navigate to `http://localhost:5173`.
 
 ---
 
@@ -137,12 +135,6 @@ Contributions are welcome! Please follow these steps:
    git push origin feature-name
    ```
 5. Open a Pull Request.
-
----
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
 
 ---
 
