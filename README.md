@@ -18,9 +18,17 @@ A real-time collaborative chat application that enables multiple users to intera
 - **Backend**: Node.js, Express.js, WebSocket
 - **Database**: MongoDB
 - **Authentication**: bcrypt, JWT
-- **AI Integration**: Google Gemini
+- **AI Integration**: OpenAI APIs
 - **Real-time Communication**: Socket.io
 - **Caching**: Redis
+- **Cloud Deployment**: AWS/GCP (if applicable)
+
+---
+
+## Demo
+
+<video src="demo/Chat_demo.mp4" controls="controls" style="max-width: 100%;"></video>
+
 ---
 
 ## Installation
