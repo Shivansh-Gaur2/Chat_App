@@ -27,7 +27,7 @@ A real-time collaborative chat application that enables multiple users to intera
 
 ## Demo
 
-<video src="demo/Chat_demo.mp4" controls="controls" style="max-width: 100%;"></video>
+<video src="Chat_demo.mp4" controls="controls" style="max-width: 100%;"></video>
 
 ---
 
