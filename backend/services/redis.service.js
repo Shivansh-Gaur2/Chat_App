@@ -1,4 +1,5 @@
-import Redis from "ioredis";
+import Redis from 'ioredis';
+
 
 const redisClient = new Redis({
     host: process.env.REDIS_HOST,
@@ -6,8 +7,9 @@ const redisClient = new Redis({
     password: process.env.REDIS_PASSWORD
 });
 
+
 redisClient.on('connect', () => {
-    console.log('Connected to Redis');
-});
+    console.log('Redis connected');
+})
 
 export default redisClient;

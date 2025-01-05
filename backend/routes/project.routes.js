@@ -1,37 +1,41 @@
-import { Router } from "express";
+import { Router } from 'express';
 import { body } from 'express-validator';
 import * as projectController from '../controllers/project.controller.js';
-import * as authMiddleware from '../middleware/auth.middleware.js';
+import * as authMiddleWare from '../middleware/auth.middleware.js';
 
 const router = Router();
 
-router.post('/create', 
-    authMiddleware.authUser,
+
+router.post('/create',
+    authMiddleWare.authUser,
     body('name').isString().withMessage('Name is required'),
-    body('users').isArray().withMessage('Users must be an array').custom((users) => {
-        if (!users.every(user => typeof user === 'string')) {
-            throw new Error('Each user must be a string');
-        }
-        return true;
-    }),
     projectController.createProject
 )
 
 router.get('/all',
-    authMiddleware.authUser,
-    projectController.getAllProjects
+    authMiddleWare.authUser,
+    projectController.getAllProject
 )
 
-router.put('/add-user', 
-    authMiddleware.authUser,
-    body('projectId').isString().withMessage('Project ID must be a string'),
-    body('users').isArray().withMessage('Users must be an array').custom((users) => {
-        if (!users.every(user => typeof user === 'string')) {
-            throw new Error('Each user must be a string');
-        }
-        return true;
-    }),
+router.put('/add-user',
+    authMiddleWare.authUser,
+    body('projectId').isString().withMessage('Project ID is required'),
+    body('users').isArray({ min: 1 }).withMessage('Users must be an array of strings').bail()
+        .custom((users) => users.every(user => typeof user === 'string')).withMessage('Each user must be a string'),
     projectController.addUserToProject
 )
+
+router.get('/get-project/:projectId',
+    authMiddleWare.authUser,
+    projectController.getProjectById
+)
+
+router.put('/update-file-tree',
+    authMiddleWare.authUser,
+    body('projectId').isString().withMessage('Project ID is required'),
+    body('fileTree').isObject().withMessage('File tree is required'),
+    projectController.updateFileTree
+)
+
 
 export default router;
