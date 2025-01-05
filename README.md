@@ -21,7 +21,6 @@ A real-time collaborative chat application that enables multiple users to intera
 - **AI Integration**: OpenAI APIs
 - **Real-time Communication**: Socket.io
 - **Caching**: Redis
-- **Cloud Deployment**: AWS/GCP (if applicable)
 
 ---
 
@@ -35,8 +34,8 @@ A real-time collaborative chat application that enables multiple users to intera
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/chat-application.git
-   cd chat-application
+   git clone https://github.com/yourusername/TeamTalk-AI.git
+   cd TeamTalk-AI
    ```
 
 2. Install dependencies for both the backend and frontend:
@@ -56,8 +55,8 @@ A real-time collaborative chat application that enables multiple users to intera
      PORT=5000
      MONGO_URI=your_mongodb_connection_string
      JWT_SECRET=your_jwt_secret
-     OPENAI_API_KEY=your_openai_api_key
      REDIS_HOST=your_redis_host
+     GOOGLE_AI_KEY = your_openai_api_key
      ```
 
 4. Start the application:
